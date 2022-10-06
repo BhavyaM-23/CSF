@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meata http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> CSF Upload dicom files</title>
+    </head>
+    <body>
+        <form action="{% url 'detect:upload' %}" method='POST' enctype="multipart/form-data">
+            <input type="text" name="patient" placeholder="Enter patient id/name">
+            <input type="file" multiple name="files">
+            {% csrf_token %}
+            <button type="submit" name="predict">Predict</button>
+        </form>
+</html>
